@@ -1,0 +1,8 @@
+/* カラー設定*/
+$colors: (
+  main: red,
+  sub: blue,
+);
+@function color($color) {
+  @return #{map-get($colors, $color)};
+}
