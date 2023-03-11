@@ -1,0 +1,81 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+
+.no-scroll {
+  overflow: hidden;
+}
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.overlay-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* form
+---------------------------------------*/
+.form {
+  width: 550px;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: auto;
+  background-color: #fff;
+  &__title {
+    font-size: m.rem(20);
+    margin-top: 29px;
+    text-align: center;
+  }
+  &__inner {
+    width: 429px;
+    margin: 25.5px auto;
+    border-top: 1px solid #e7e7e7;
+    padding-top: 21.5px;
+  }
+}
+.form-box {
+  label,
+  .form-input {
+    display: block;
+    margin-top: 13px;
+  }
+  .form-input {
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid #e7e7e7;
+    font-size: m.rem(14);
+    option {
+      &:first-child {
+        color: gray;
+      }
+    }
+  }
+}
+.label-inner {
+  font-size: m.rem(14);
+}
+.btn-wrapper {
+  text-align: center;
+  margin: 62px auto 0;
+  width: 198px;
+  border: 1px solid #070707;
+  position: relative;
+  padding: 10px 0;
+}

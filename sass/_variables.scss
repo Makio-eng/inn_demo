@@ -1,7 +1,8 @@
 /* カラー設定*/
 $colors: (
-  main: red,
-  sub: blue,
+  // main: red,
+  // sub: blue,
+  btn: #978F10
 );
 @function color($color) {
   @return #{map-get($colors, $color)};

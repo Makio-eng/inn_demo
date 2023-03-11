@@ -1,0 +1,242 @@
+@charset "UTF-8";
+/* ブレークポイント*/ /* カラー設定*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  letter-spacing: normal;
+  font-family: "Times New Roman", "游明朝", "Yu Mincho", "游明朝体", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E", "MS P明朝", "MS PMincho", serif;
+}
+
+img {
+  width: 100%;
+  vertical-align: bottom;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+/* flatpickr
+-------------------------*/
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-weekdays .flatpickr-weekday:nth-child(7n+1),
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-days .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n+1) {
+  color: #fe6352;
+}
+
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-weekdays .flatpickr-weekday:nth-child(7),
+.flatpickr-calendar .flatpickr-innerContainer .flatpickr-days .flatpickr-day:not(.flatpickr-disabled):not(.prevMonthDay):not(.nextMonthDay):nth-child(7n) {
+  color: #5290fe;
+}
+
+/* header
+---------------------------------------*/
+.header {
+  width: 100%;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.2s;
+}
+.logo:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+.logo__img-wrapper {
+  width: 40px;
+}
+.logo__title {
+  font-size: 2rem;
+  letter-spacing: 0.18em;
+}
+
+.nav {
+  margin-left: 115px;
+}
+.nav__list {
+  display: flex;
+  gap: 30px;
+}
+.nav__item {
+  transition: 0.2s;
+}
+.nav__item:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}
+
+.reserve-btn {
+  margin-left: auto;
+  display: inline-block;
+  width: 170px;
+  height: 54px;
+  background-color: #978F10;
+  position: relative;
+}
+.reserve-btn__title {
+  display: inline-block;
+  margin-left: 69px;
+}
+.reserve-btn__title::before {
+  content: url("../img/calender.svg");
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 37px;
+}
+.reserve-btn__title::after {
+  content: "";
+  width: 72px;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  top: 38px;
+  left: 65px;
+  transform: scaleX(0);
+  transition: 0.3s;
+}
+
+.reserve-btn:hover > .reserve-btn__title::after {
+  transition: 0.3s;
+  transform: scaleX(1);
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.overlay-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* form
+---------------------------------------*/
+.form {
+  width: 550px;
+  height: 600px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: auto;
+  background-color: #fff;
+}
+.form__title {
+  font-size: 1.25rem;
+  margin-top: 29px;
+  text-align: center;
+}
+.form__inner {
+  width: 429px;
+  margin: 25.5px auto;
+  border-top: 1px solid #e7e7e7;
+  padding-top: 21.5px;
+}
+
+.form-box label,
+.form-box .form-input {
+  display: block;
+  margin-top: 13px;
+}
+.form-box .form-input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #e7e7e7;
+  font-size: 0.875rem;
+}
+.form-box .form-input option:first-child {
+  color: gray;
+}
+
+.label-inner {
+  font-size: 0.875rem;
+}
+
+.btn-wrapper {
+  text-align: center;
+  margin: 62px auto 0;
+  width: 198px;
+  border: 1px solid #070707;
+  position: relative;
+  padding: 10px 0;
+}
+
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.overlay-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* fv
+---------------------------------------*/
+.fv {
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  background-image: url("../img/mainbg01.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+.fv__text-wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 46px;
+  position: absolute;
+  top: 33.5%;
+  left: 65.3%;
+}
+.fv__text {
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-rl;
+  font-size: 2.125rem;
+  letter-spacing: 0.24em;
+}/*# sourceMappingURL=style.css.map */

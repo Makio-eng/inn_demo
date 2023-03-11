@@ -1,0 +1,81 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+/* header
+---------------------------------------*/
+.header {
+  width: 100%;
+  &__inner {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+  }
+}
+.logo {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: 0.2s;
+  &:hover {
+    opacity: 0.8;
+    transition: 0.2s;
+  }
+  &__img-wrapper {
+    width: 40px;
+  }
+  &__title {
+    font-size: m.rem(32);
+    letter-spacing: 0.18em;
+  }
+}
+.nav {
+  margin-left: 115px;
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+  &__item {
+    transition: 0.2s;
+    &:hover {
+      opacity: 0.8;
+      transition: 0.2s;
+    }
+  }
+}
+.reserve-btn {
+  margin-left: auto;
+  display: inline-block;
+  width: 170px;
+  height: 54px;
+  background-color: v.color(btn);
+  position: relative;
+  &__title {
+    display: inline-block;
+    margin-left: 69px;
+    &::before {
+      content: url("../img/calender.svg");
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 37px;
+    }
+    &::after {
+      content: "";
+      width: 72px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: 38px;
+      left: 65px;
+      transform: scaleX(0);
+      transition: 0.3s;
+    }
+  }
+}
+.reserve-btn:hover > .reserve-btn__title::after {
+  transition: 0.3s;
+  transform: scaleX(1);
+}

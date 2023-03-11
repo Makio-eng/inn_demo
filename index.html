@@ -4,14 +4,132 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="“robots”" content="“noindex”" />
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="ディスクリプション＝日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。
+    伝統的「和」の息づく空間で、至極のひとときをお過ごしください。"
+    />
     <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./css/destyle.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
-    <title></title>
+    <!-- flatpickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
   </head>
-  <body></body>
+  <body>
+    <!-- main -->
+    <main>
+      <div class="overlay"></div>
+      <div class="form">
+        <h2 class="form__title">宿泊予約</h2>
+        <form action="#" id="form" class="form__inner">
+          <div class="form-box">
+            <label for="name">お名前</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              class="form-input"
+              required
+              placeholder="例：山田　太郎"
+            />
+          </div>
+          <div class="form-box">
+            <label for="email">メールアドレス</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-input"
+              required
+              placeholder="例：Example@example.com"
+            />
+          </div>
+          <div class="form-box">
+            <label for="contact-body"
+              >ご希望プラン<span class="label-inner"
+                >（空いているプランのみ表示されます）</span
+              ></label
+            >
+            <select class="form-input selectbox" name="plan" required>
+              <option value="" disabled>プランを選択してください</option>
+              <option value="plan_1">
+                ①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン
+              </option>
+              <option value="plan_2">
+                ②平日に優雅に楽しむ、特別宿泊プラン
+              </option>
+              <option value="plan_3">
+                ③絶景貸切露天と個室会席を満喫できるファミリープラン
+              </option>
+            </select>
+          </div>
+          <div class="form-box">
+            <label for="flatpickr">日時選択</label>
+            <input
+              class="form-input"
+              type="text"
+              id="flatpickr"
+              placeholder="日時を選択してください"
+            />
+          </div>
+          <div class="btn-wrapper">
+            <button type="submit" class="btn--form" id="js-submit" disabled>
+              送信する
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="submit-overlay">
+        <div class="pulse-container">
+          <div class="pulse-bubble pulse-bubble-1"></div>
+          <div class="pulse-bubble pulse-bubble-2"></div>
+          <div class="pulse-bubble pulse-bubble-3"></div>
+        </div>
+      </div>
+
+      <div class="fv">
+        <!-- header -->
+        <header class="header">
+          <div class="header__inner">
+            <a href="./index.html" class="logo">
+              <div class="logo__img-wrapper">
+                <img src="./img/white_logo.svg" alt="" class="logo__img" />
+              </div>
+              <h1 class="logo__title">石井花壇</h1>
+            </a>
+            <nav class="nav">
+              <ul class="nav__list">
+                <a href="" class="nav__link">
+                  <li class="nav__item">お部屋</li>
+                </a>
+                <a href="" class="nav__link">
+                  <li class="nav__item">お料理</li>
+                </a>
+                <a href="" class="nav__link">
+                  <li class="nav__item">温泉</li>
+                </a>
+              </ul>
+            </nav>
+            <button class="reserve-btn">
+              <span class="reserve-btn__title">宿泊予約</span>
+            </button>
+          </div>
+        </header>
+        <!-- //header -->
+
+        <div class="fv__text-wrapper">
+          <h1 class="fv__text fv__text--right">頑張る人の</h1>
+          <h1 class="fv__text fv__text--left">頑張らない時間</h1>
+        </div>
+      </div>
+    </main>
+    <!-- flatpickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
