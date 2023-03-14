@@ -1,0 +1,46 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+
+/* consept
+---------------------------------------*/
+.consept {
+  width: 100%;
+  background-image: url(../../img/paper-bg.jpg);
+  padding: 149px 0 119px;
+  &__inner {
+    display: flex;
+    gap: m.rem(115);
+    justify-content: center;
+    flex-direction: row-reverse;
+    width: 90%;
+    margin: 0 auto;
+  }
+  &__title-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  &__title {
+    font-size: m.rem(28);
+    letter-spacing: 0.5em;
+
+    &:first-child {
+      margin-top: -85px;
+    }
+  }
+  &__body-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__body {
+    letter-spacing: 0.38em;
+  }
+  &__signature {
+    font-size: m.rem(22);
+    text-align: end;
+    margin-bottom: 20px;
+    letter-spacing: 0.45em;
+  }
+}

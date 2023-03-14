@@ -26,3 +26,8 @@ img {
   -o-object-fit: cover;
   object-fit: cover;
 }
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  -webkit-writing-mode: vertical-rl;
+}

@@ -2,50 +2,64 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="“robots”" content="“noindex”" />
     <meta
       name="description"
       content="ディスクリプション＝日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。
-    伝統的「和」の息づく空間で、至極のひとときをお過ごしください。"
+      伝統的「和」の息づく空間で、至極のひとときをお過ごしください。"
     />
     <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./css/destyle.css" />
     <link rel="stylesheet" href="./css/style.css" />
-    <!-- flatpickr -->
+    <!--flatpickr-->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
-    <title>石井花壇 | 温海温泉旅館【公式サイト】</title>
+    <!--------------SwiperCSS------------------------------------------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <!--------------SwiperJS-------------------------------------------------------------->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <title>石井花壇|温海温泉旅館【公式サイト】</title>
   </head>
   <body>
-    <!-- main -->
+    <!--main-->
     <main>
       <div class="overlay"></div>
       <div class="form">
+        <span class="close-icon"></span>
         <h2 class="form__title">宿泊予約</h2>
-        <form action="#" id="form" class="form__inner">
+        <form
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB61GLuboxKLu0PuF_aZj3KmujQ58TD-msUjcJSblzQTb_Vg/formResponse"
+          id="form"
+          class="form__inner"
+        >
           <div class="form-box">
             <label for="name">お名前</label>
             <input
               type="text"
-              name="name"
+              name="entry.30606485"
               id="name"
               class="form-input"
               required
-              placeholder="例：山田　太郎"
+              placeholder="例：山田太郎"
+              required
             />
           </div>
           <div class="form-box">
             <label for="email">メールアドレス</label>
             <input
               type="email"
-              name="email"
+              name="entry.523598480"
               id="email"
               class="form-input"
               required
               placeholder="例：Example@example.com"
+              required
             />
           </div>
           <div class="form-box">
@@ -54,50 +68,50 @@
                 >（空いているプランのみ表示されます）</span
               ></label
             >
-            <select class="form-input selectbox" name="plan" required>
-              <option value="" disabled>プランを選択してください</option>
-              <option value="plan_1">
+            <select
+              class="form-input selectbox"
+              name="entry.1718052570"
+              onchange="changeColor(this)"
+              required
+            >
+              <option value="">プランを選択してください</option>
+              <option value="①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン">
                 ①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン
               </option>
-              <option value="plan_2">
+              <option value="②平日に優雅に楽しむ、特別宿泊プラン">
                 ②平日に優雅に楽しむ、特別宿泊プラン
               </option>
-              <option value="plan_3">
+              <option
+                value="③絶景貸切露天と個室会席を満喫できるファミリープラン"
+              >
                 ③絶景貸切露天と個室会席を満喫できるファミリープラン
               </option>
             </select>
           </div>
           <div class="form-box">
-            <label for="flatpickr">日時選択</label>
+            <label class="selectdate" for="flatpickr">日時選択</label>
             <input
               class="form-input"
               type="text"
               id="flatpickr"
               placeholder="日時を選択してください"
+              name="entry.1835067581"
             />
           </div>
           <div class="btn-wrapper">
-            <button type="submit" class="btn--form" id="js-submit" disabled>
+            <button type="submit" class="btn--form" id="js-submit">
               送信する
             </button>
           </div>
         </form>
       </div>
-      <div class="submit-overlay">
-        <div class="pulse-container">
-          <div class="pulse-bubble pulse-bubble-1"></div>
-          <div class="pulse-bubble pulse-bubble-2"></div>
-          <div class="pulse-bubble pulse-bubble-3"></div>
-        </div>
-      </div>
-
       <div class="fv">
-        <!-- header -->
+        <!--header-->
         <header class="header">
           <div class="header__inner">
             <a href="./index.html" class="logo">
               <div class="logo__img-wrapper">
-                <img src="./img/white_logo.svg" alt="" class="logo__img" />
+                <span class="logo__img"></span>
               </div>
               <h1 class="logo__title">石井花壇</h1>
             </a>
@@ -119,15 +133,64 @@
             </button>
           </div>
         </header>
-        <!-- //header -->
+        <!--//header-->
 
-        <div class="fv__text-wrapper">
-          <h1 class="fv__text fv__text--right">頑張る人の</h1>
-          <h1 class="fv__text fv__text--left">頑張らない時間</h1>
+        <!--fv-->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="swiper-img">
+                <img src="./img/mainbg01.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-img">
+                <img src="./img/mainbg02.jpg" alt="" />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="swiper-img">
+                <img src="./img/mainbg03.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vertical-text fv__text-wrapper">
+          <h2 class="fv__text">頑張る人の</h2>
+          <h2 class="fv__text">頑張らない時間</h2>
         </div>
       </div>
+      <!--//fv-->
+
+      <!--consept-->
+      <section class="consept">
+        <div class="consept__inner">
+          <div class="vertical-text consept__title-wrapper">
+            <h2 class="consept__title">温海温泉の</h2>
+            <h2 class="consept__title">美しさに癒やされて</h2>
+          </div>
+          <div class="vertical-text consept__body-wrapper">
+            <p class="consept__body">東北の奥座敷である温海温泉郷</p>
+            <p class="consept__body">開湯は約1300年前とされ、役小角が</p>
+            <p class="consept__body">発見したと伝えられます</p>
+          </div>
+          <div class="vertical-text consept__body-wrapper">
+            <p class="consept__body">石井花壇は江戸より続く由緒ある旅館で</p>
+            <p class="consept__body">
+              クラシックな作りの中に大正ロマンあふれる
+            </p>
+            <p class="consept__body">内装を残しております</p>
+          </div>
+          <div class="vertical-text consept__body-wrapper">
+            <p class="consept__body">圧倒的癒やしの空間で</p>
+            <p class="consept__body">頑張る現代人に</p>
+            <p class="consept__body">頑張らない圧倒的な非日常をご提供します</p>
+          </div>
+          <p class="vertical-text consept__signature">石井花壇</p>
+        </div>
+      </section>
+      <!--//consept-->
     </main>
-    <!-- flatpickr -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
     <script src="./js/script.js"></script>

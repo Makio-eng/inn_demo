@@ -9,7 +9,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -18,13 +17,9 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
-  transition: all 0.3s;
+  visibility: hidden;
+  transition: 0.8s;
 }
-.overlay-open {
-  visibility: visible;
-  opacity: 1;
-}
-
 /* form
 ---------------------------------------*/
 .form {
@@ -35,9 +30,12 @@
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 20;
+  z-index: 50;
   margin: auto;
   background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.8s;
   &__title {
     font-size: m.rem(20);
     margin-top: 29px;
@@ -48,6 +46,24 @@
     margin: 25.5px auto;
     border-top: 1px solid #e7e7e7;
     padding-top: 21.5px;
+    position: relative;
+  }
+}
+.modal-open {
+  visibility: visible;
+  opacity: 1;
+}
+.close-icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url(../../img/close.svg);
+  top: 20px;
+  right: 22px;
+  transition: 0.2s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
   }
 }
 .form-box {
@@ -55,27 +71,73 @@
   .form-input {
     display: block;
     margin-top: 13px;
+    &:focus {
+      outline: none;
+      border: 2px solid v.color(btn);
+    }
   }
   .form-input {
     width: 100%;
     padding: 7px 10px;
     border: 1px solid #e7e7e7;
     font-size: m.rem(14);
-    option {
-      &:first-child {
-        color: gray;
-      }
-    }
+    cursor: pointer;
+  }
+  label {
+    cursor: default;
   }
 }
 .label-inner {
   font-size: m.rem(14);
 }
+.selectbox {
+  color: gray;
+}
+.selectdate {
+  position: relative;
+  &::after {
+    content: url(../../img/require.svg);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    left: 70px;
+    display: none;
+  }
+}
 .btn-wrapper {
+  display: block;
   text-align: center;
   margin: 62px auto 0;
-  width: 198px;
   border: 1px solid #070707;
   position: relative;
-  padding: 10px 0;
+  width: 198px;
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: v.color(btn);
+    display: inline-block;
+    position: absolute;
+    transform: translateX(-100%);
+    transition: 0.3s;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    border-color: v.color(btn);
+    &::before {
+      transition: all 0.4s ease-out;
+      transform: none;
+    }
+  }
+
+  .btn--form {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    transition: 0.3s;
+  }
 }
