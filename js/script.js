@@ -1,3 +1,23 @@
+//ヘッダー制御
+window.addEventListener('scroll', headerChange);
+function headerChange() {
+  const header = document.querySelector('.header');
+  let headerHeight = header.clientHeight;
+  if (window.scrollY > headerHeight) {
+    header.classList.add('fixed');
+    header.style.animation = 'header-anime ease .4s';
+  } else {
+    if (header.classList.contains('fixed')) {
+      header.style.animation = 'header-anime-remove ease .4s';
+      setTimeout(fixedRemove, 150);
+      function fixedRemove() {
+        header.classList.remove('fixed');
+        header.style.animation = '';
+      }
+    }
+  }
+}
+
 // カレンダー（範囲選択）
 flatpickr('#flatpickr', {
   locale: 'ja',
@@ -40,9 +60,9 @@ function toggleModal() {
 }
 
 // swiper
-const swiper = new Swiper(".swiper", {
+const swiper = new Swiper('.swiper', {
   loop: true,
-  effect: "fade", // フェード切り替え
+  effect: 'fade', // フェード切り替え
   // 自動再生
   autoplay: {
     delay: 4000, // 4秒後に次のスライドへ
