@@ -1,0 +1,89 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+
+/* news
+---------------------------------------*/
+.news {
+  padding: 60px 30px;
+}
+.tab {
+  max-width: 1196px;
+  margin: 0 auto;
+  &__menu {
+    display: flex;
+    justify-content: center;
+    gap: 53px;
+    margin-top: 40px;
+    margin-left: -22px;
+  }
+  &__menu-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    cursor: default;
+    transition: 0.3s;
+    &:not(.is-active) {
+      &:hover {
+        cursor: pointer;
+        scale: 1.2;
+        transition: 0.3s;
+      }
+    }
+  }
+  &__panel {
+    margin-top: 46.5px;
+    margin-left: 4px;
+  }
+}
+.info-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 46px;
+}
+.info-item {
+  width: calc(50% - 28px);
+  display: flex;
+  padding: 15px 0 15px 10px;
+  gap: 30px;
+  background-color: #f6f6f6;
+  transition: 0.3s;
+  position: relative;
+  &:hover {
+    scale: 1.03;
+    transition: 0.6s;
+  }
+  &__img-wrapper {
+    width: 103px;
+  }
+  &__img {
+    aspect-ratio: 103/100;
+  }
+  &__body {
+    margin-top: -3px;
+    width: 70%;
+  }
+  &__day {
+    font-size: m.rem(14);
+    display: inline-block;
+  }
+  &__text {
+    margin-top: 8px;
+    @include m.lineHeight(2);
+  }
+}
+.tab__panel-boxDay,
+.tab__panel-boxOther {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+}
+
+.is-active {
+  border-bottom: 1px solid #000;
+}
+.is-show {
+  overflow: visible;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out;
+}

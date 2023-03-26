@@ -1,0 +1,83 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+
+/* footer
+---------------------------------------*/
+.footer {
+  width: 100%;
+  background-image: url(../../img/footer-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  &__inner {
+    padding: 64px 30px 61px;
+  }
+  &__nav {
+    width: 100%;
+    margin: 0 auto;
+  }
+  &__nav-list {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    font-size: m.rem(18);
+  }
+  &__nav-item {
+    letter-spacing: 0.8em;
+    transition: 0.2s;
+    &:hover {
+      opacity: 0.6;
+      transition: 0.2s;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    margin: 82px auto 0;
+    text-align: center;
+  }
+  &__img-wrapper {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+  }
+  &__logo-title {
+    font-size: m.rem(32);
+    margin-top: 18px;
+    margin-left: 6px;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+  }
+  &__address-wrapper {
+    width: 100%;
+    margin-top: 68px;
+    margin-left: 2px;
+    display: flex;
+    gap: 22px;
+    justify-content: center;
+  }
+  &__address {
+    letter-spacing: 0.162em;
+  }
+  &__tel-wrapper {
+    width: 100%;
+    margin-top: 19px;
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-left: 4px;
+  }
+  &__copy-wrapper {
+    width: 100%;
+    padding: 19px 0;
+    text-align: center;
+    background-color: #000;
+  }
+  &__copy {
+    font-size: m.rem(12);
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+  }
+}

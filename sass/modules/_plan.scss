@@ -1,0 +1,41 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+
+/* plan
+---------------------------------------*/
+.plan {
+  padding: 60px 30px 144px;
+  background-image: url(../../img/plan-bg.jpg);
+  background-repeat: no-repeat;
+  &__inner {
+    max-width: 1181px;
+    margin: 0 auto;
+  }
+  &__list {
+    display: flex;
+    gap: 94px;
+    margin-top: 62px;
+  }
+  &__img {
+    aspect-ratio: 331/209;
+  }
+  &__item {
+    width: calc(33.33% - 63px);
+    transition: 0.3s;
+    &:hover {
+      scale: 1.01;
+      transition: 0.3s;
+      filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.6));
+    }
+  }
+  &__title {
+    font-size: m.rem(20);
+    margin-top: 34px;
+    @include m.lineHeight(1.6);
+  }
+  &__text {
+    margin-top: 28px;
+    @include m.lineHeight(2);
+  }
+}

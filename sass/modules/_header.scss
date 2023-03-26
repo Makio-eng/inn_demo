@@ -5,7 +5,7 @@
 ---------------------------------------*/
 .header {
   width: 100%;
-  z-index: 999;
+  z-index: 100;
   position: absolute;
   top: 0;
   &__inner {
@@ -19,6 +19,7 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  color: #fff;
   transition: 0.2s;
   &:hover {
     opacity: 0.8;
@@ -44,11 +45,39 @@
     display: flex;
     gap: 30px;
   }
+
   &__item {
-    transition: opacity 0.2s;
+    position: relative;
+    color: #fff;
+    &::after {
+      content: "";
+      width: 60px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: 22px;
+      left: -6px;
+      transform: scaleX(0);
+      transition: 0.2s;
+    }
     &:hover {
-      opacity: 0.8;
-      transition: opacity 0.2s;
+      &::after {
+        transition: 0.2s;
+        transform: scaleX(1);
+      }
+    }
+    &--spa {
+      &::after {
+        content: "";
+        width: 40px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: 22px;
+        left: -4px;
+        transform: scaleX(0);
+        transition: 0.2s;
+      }
     }
   }
 }
@@ -62,6 +91,7 @@
   &__title {
     display: inline-block;
     margin-left: 69px;
+    color: #fff;
     &::before {
       content: url("../img/calender.svg");
       width: 22px;
@@ -88,15 +118,58 @@
   transition: 0.3s;
   transform: scaleX(1);
 }
+
+// 固定ヘッダー
 .fixed {
   position: fixed;
   background-color: #fff;
   .logo__title,
   .nav {
     color: #000;
+    &__item {
+      position: relative;
+      color: #000;
+      &::after {
+        content: "";
+        width: 60px;
+        height: 2px;
+        background-color: #303030;
+        position: absolute;
+        top: 22px;
+        left: -6px;
+        transform: scaleX(0);
+        transition: 0.2s;
+      }
+      &:hover {
+        &::after {
+          transition: 0.2s;
+          transform: scaleX(1);
+        }
+      }
+      &--spa {
+        &::after {
+          content: "";
+          width: 40px;
+          height: 2px;
+          background-color: #303030;
+          position: absolute;
+          top: 22px;
+          left: -4px;
+          transform: scaleX(0);
+          transition: 0.2s;
+        }
+      }
+    }
   }
-  .logo__img {
-    background-image: url(../../img/black_logo.svg);
+  .logo {
+    transition: 0.2s;
+    &:hover {
+      opacity: 0.6;
+      transition: 0.2s;
+    }
+    &__img {
+      background-image: url(../../img/black_logo.svg);
+    }
   }
 
   @keyframes header-anime {

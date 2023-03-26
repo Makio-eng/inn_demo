@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="“robots”" content="“noindex”" />
+    <meta
+      name="description"
+      content="ディスクリプション＝日本古来の素材と現代的表現を併せ持つ温泉旅館、石井花壇。
+      伝統的「和」の息づく空間で、至極のひとときをお過ごしください。"
+    />
+    <link rel="icon" href="./img/favicon.ico" />
+    <link rel="stylesheet" href="./css/destyle.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "トップ",
+            "item": "https://technical-seo.jp/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "お部屋",
+            "item": "https://technical-seo.jp/category/seo/"
+          }
+        ]
+      }
+    </script>
+    <title>石井花壇|温海温泉旅館【公式サイト】</title>
+  </head>
+  <body>
+    <!--header-->
+    <header class="under-header">
+      <div class="under-header__inner">
+        <a href="./index.html" class="logo">
+          <div class="logo__img-wrapper">
+            <span class="logo__img"></span>
+          </div>
+          <h1 class="logo__title">石井花壇</h1>
+        </a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <a href="./room.html" class="nav__link">
+              <li class="nav__item">お部屋</li>
+            </a>
+            <a href="./food.html" class="nav__link">
+              <li class="nav__item">お料理</li>
+            </a>
+            <a href="./spa.html" class="nav__link">
+              <li class="nav__item nav__item--spa">温泉</li>
+            </a>
+          </ul>
+        </nav>
+        <button class="reserve-btn">
+          <span class="reserve-btn__title">宿泊予約</span>
+        </button>
+      </div>
+
+      <!--モーダル-->
+      <div class="overlay"></div>
+      <div class="form">
+        <span class="close-icon"></span>
+        <h2 class="form__title">宿泊予約</h2>
+        <form
+          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB61GLuboxKLu0PuF_aZj3KmujQ58TD-msUjcJSblzQTb_Vg/formResponse"
+          id="form"
+          class="form__inner"
+        >
+          <div class="form-box">
+            <label for="name">お名前</label>
+            <input
+              type="text"
+              name="entry.30606485"
+              id="name"
+              class="form-input"
+              required
+              placeholder="例：山田太郎"
+              required
+            />
+          </div>
+          <div class="form-box">
+            <label for="email">メールアドレス</label>
+            <input
+              type="email"
+              name="entry.523598480"
+              id="email"
+              class="form-input"
+              required
+              placeholder="例：Example@example.com"
+              required
+            />
+          </div>
+          <div class="form-box">
+            <label for="contact-body"
+              >ご希望プラン<span class="label-inner"
+                >（空いているプランのみ表示されます）</span
+              ></label
+            >
+            <select
+              class="form-input selectbox"
+              name="entry.1718052570"
+              onchange="changeColor(this)"
+              required
+            >
+              <option value="">プランを選択してください</option>
+              <option value="①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン">
+                ①【期間限定】海辺の四季旬彩、贅沢美味懐石プラン
+              </option>
+              <option value="②平日に優雅に楽しむ、特別宿泊プラン">
+                ②平日に優雅に楽しむ、特別宿泊プラン
+              </option>
+              <option
+                value="③絶景貸切露天と個室会席を満喫できるファミリープラン"
+              >
+                ③絶景貸切露天と個室会席を満喫できるファミリープラン
+              </option>
+            </select>
+          </div>
+          <div class="form-box">
+            <label class="selectdate" for="flatpickr">日時選択</label>
+            <input
+              class="form-input"
+              type="text"
+              id="flatpickr"
+              placeholder="日時を選択してください"
+              name="entry.1835067581"
+            />
+          </div>
+          <div class="btn-wrapper">
+            <button type="submit" class="btn--form" id="js-submit">
+              送信する
+            </button>
+          </div>
+        </form>
+      </div>
+      <!--//モーダル-->
+    </header>
+    <!--//header-->
+
+    <!--main-->
+    <main class="under-main">
+      <!--fv-->
+      <div class="under-fv under-fv--room">
+        <p class="under-fv__title">お部屋</p>
+      </div>
+      <!--//fv-->
+
+      <!--section-wrapper-->
+      <div class="under-section-wrapper">
+        <ol
+          class="breadcrumb"
+          itemscope
+          itemtype="https://schema.org/BreadcrumbList"
+        >
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a itemprop="item" href="./index.html">
+              <span itemprop="name">トップ</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </li>
+          <li
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a itemprop="item" href="./room.html" tabindex="-1">
+              <span itemprop="name">お部屋</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </li>
+        </ol>
+      </div>
+      <!--//section-wrapper-->
+    </main>
+    <!--//main-->
+
+    <!--footer-->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__nav">
+          <ul class="footer__nav-list vertical-text">
+            <a href="" class="footer__nav-item">お部屋</a>
+            <a href="" class="footer__nav-item">お料理</a>
+            <a href="" class="footer__nav-item">温泉</a>
+          </ul>
+        </div>
+        <div class="footer__logo">
+          <div class="footer__img-wrapper">
+            <img src="./img/black_logo.svg" alt="" class="footer__img" />
+          </div>
+          <h2 class="footer__logo-title">石井花壇</h2>
+        </div>
+        <div class="footer__address-wrapper">
+          <p class="footer__post">〒000-0000</p>
+          <p class="footer__address">山形県鶴岡市xxxxxxxxxxx</p>
+        </div>
+        <div class="footer__tel-wrapper">
+          <p class="footer__tel">TEL.000-0000-0000</p>
+          <p class="footer__fax">FAX.00-0000-0000</p>
+        </div>
+      </div>
+      <div class="footer__copy-wrapper">
+        <small class="footer__copy"
+          >Copyright © 石井花壇 All Rights Reserved.</small
+        >
+      </div>
+    </footer>
+    <!--//footer-->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

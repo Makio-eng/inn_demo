@@ -1,0 +1,65 @@
+@use "../mixin" as m;
+@use "../variables" as v;
+@use "../base" as b;
+
+/* access
+---------------------------------------*/
+.access {
+  padding: 60px 30px 110px;
+  background-image: url(../../img/paper-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+
+  &__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  &__info {
+    display: flex;
+    gap: 83px;
+    width: 100%;
+    margin-top: 80px;
+  }
+  &__img-wrapper {
+    width: 55.6%;
+    margin-left: 2px;
+  }
+  &__img {
+    aspect-ratio: 656/370;
+  }
+  &__body {
+    width: 37.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  &__address-title {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  &__address {
+    @include m.lineHeight(2);
+  }
+  &__tel-title {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  &__tel {
+    letter-spacing: 0.01em;
+  }
+  &__hour-title {
+    font-weight: bold;
+  }
+  &__pick {
+    @include m.lineHeight(2);
+  }
+  &__map {
+    max-width: 792px;
+    width: 67%;
+    margin: 69px auto 0;
+  }
+  & iframe {
+    aspect-ratio: 792/592;
+  }
+}
