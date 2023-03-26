@@ -57,7 +57,7 @@
   position: absolute;
   width: 18px;
   height: 18px;
-  background-image: url(../../img/close.svg);
+  background-image: url(../img/close.svg);
   top: 20px;
   right: 22px;
   transition: 0.2s;
@@ -96,7 +96,7 @@
 .selectdate {
   position: relative;
   &::after {
-    content: url(../../img/require.svg);
+    content: url(../img/require.svg);
     width: 16px;
     height: 16px;
     display: inline-block;

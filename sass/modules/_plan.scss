@@ -6,7 +6,7 @@
 ---------------------------------------*/
 .plan {
   padding: 60px 30px 144px;
-  background-image: url(../../img/plan-bg.jpg);
+  background-image: url(../img/plan-bg.jpg);
   background-repeat: no-repeat;
   &__inner {
     max-width: 1181px;
@@ -26,7 +26,7 @@
     &:hover {
       scale: 1.01;
       transition: 0.3s;
-      filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.6));
+      filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.6));
     }
   }
   &__title {
