@@ -15,10 +15,15 @@
   z-index: 150;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
   opacity: 0;
   visibility: hidden;
   transition: 0.8s;
+  &--reserve {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &--nav {
+    background: rgba(123, 123, 123, 0.5);
+  }
 }
 /* form
 ---------------------------------------*/
@@ -36,6 +41,10 @@
   opacity: 0;
   visibility: hidden;
   transition: 0.8s;
+  @include m.mq(sp) {
+    max-width: 90%;
+    height: clamp(34.375rem, 32.138rem + 11.19vw, 37.5rem);
+  }
   &__title {
     font-size: m.rem(20);
     margin-top: 29px;
@@ -47,6 +56,9 @@
     border-top: 1px solid #e7e7e7;
     padding-top: 21.5px;
     position: relative;
+    @include m.mq(sp) {
+      max-width: 90%;
+    }
   }
 }
 .modal-open {
@@ -85,10 +97,17 @@
   }
   label {
     cursor: default;
+    @include m.mq(sp) {
+      font-size: clamp(0.875rem, 0.786rem + 0.45vw, 1rem);
+    }
   }
 }
 .label-inner {
   font-size: m.rem(14);
+  @include m.mq(sp) {
+    display: block;
+    margin-top: 8px;
+  }
 }
 .selectbox {
   color: gray;
@@ -114,6 +133,9 @@
   width: 198px;
   position: relative;
   overflow: hidden;
+  @include m.mq(sp) {
+    margin-top: clamp(2.5rem, 1.516rem + 4.92vw, 3.875rem);
+  }
   &::before {
     content: "";
     width: 100%;

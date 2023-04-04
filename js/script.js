@@ -3,14 +3,20 @@
 /* ヘッダー
 ---------------------------------------------------*/
 const header = document.querySelector('header');
+const bars = document.querySelectorAll('.bar');
 // 下層ページはアニメーション無しで固定
 if (!header.classList.contains('under-header')) {
   window.addEventListener('scroll', headerChange);
 }
 function headerChange() {
   let headerHeight = header.clientHeight;
+  const nav = document.querySelector('.nav');
   if (window.scrollY > headerHeight) {
     header.classList.add('fixed');
+    bars.forEach((bar) => {
+      bar.classList.add('black-bar');
+    });
+    nav.classList.add('white-nav');
     header.style.animation = 'header-anime ease .4s';
   } else {
     if (header.classList.contains('fixed')) {
@@ -18,6 +24,10 @@ function headerChange() {
       setTimeout(fixedRemove, 150);
       function fixedRemove() {
         header.classList.remove('fixed');
+        bars.forEach((bar) => {
+          bar.classList.remove('black-bar');
+        });
+        nav.classList.remove('white-nav');
         header.style.animation = '';
       }
     }
@@ -51,22 +61,38 @@ function changeColor(plan) {
 /* モーダル
 ---------------------------------------------------*/
 
-const reserveBtn = document.querySelector('.reserve-btn');
-const ovarLay = document.querySelector('.overlay');
-const closeBtn = document.querySelector('.close-icon');
-
+// オーバーレイ・スクロールロック用にbody取得
 const body = document.body;
-const formModal = document.querySelector('.form');
 
-// モーダル切り替え関連の要素にイベント設定
-let modalTriggers = [reserveBtn, ovarLay, closeBtn];
-modalTriggers.forEach((modalTrigger) => {
-  modalTrigger.addEventListener('click', toggleModal);
+// モーダル切り替え関連の要素にイベント設定(宿泊予約画面)
+const reserveBtn = document.querySelector('.reserve-btn');
+const closeBtn = document.querySelector('.close-icon');
+const formModal = document.querySelector('.form');
+const ovarLayReserve = document.querySelector('.overlay--reserve');
+
+let reserveTriggers = [reserveBtn, ovarLayReserve, closeBtn];
+reserveTriggers.forEach((reserveTrigger) => {
+  reserveTrigger.addEventListener('click', toggleReserveModal);
 });
-function toggleModal() {
-  ovarLay.classList.toggle('modal-open');
-  formModal.classList.toggle('modal-open');
+function toggleReserveModal() {
+  ovarLayReserve.classList.toggle('modal-open');
   body.classList.toggle('no-scroll');
+  formModal.classList.toggle('modal-open');
+}
+
+// モーダル切り替え関連の要素にイベント設定(ナビゲーション)
+const nav = document.querySelector('.nav');
+const burgerBtn = document.querySelector('.burger-btn');
+const ovarLayNav = document.querySelector('.overlay--nav');
+let navTriggers = [burgerBtn, ovarLayNav];
+navTriggers.forEach((navTrigger) => {
+  navTrigger.addEventListener('click', toggleNavModal);
+});
+function toggleNavModal() {
+  ovarLayNav.classList.toggle('modal-open');
+  body.classList.toggle('no-scroll');
+  nav.classList.toggle('menu-open');
+  burgerBtn.classList.toggle('btn-open');
 }
 
 /* swiper

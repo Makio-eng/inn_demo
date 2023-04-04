@@ -53,7 +53,12 @@
           </div>
           <h1 class="logo__title">石井花壇</h1>
         </a>
-        <nav class="nav">
+        <button class="burger-btn black-bar">
+          <span class="bar black-bar bar-top"></span>
+          <span class="bar black-bar bar-mid"></span>
+          <span class="bar black-bar bar-bottom"></span>
+        </button>
+        <nav class="nav white-nav">
           <ul class="nav__list">
             <a href="./room.html" class="nav__link">
               <li class="nav__item">お部屋</li>
@@ -72,7 +77,8 @@
       </div>
 
       <!--モーダル-->
-      <div class="overlay"></div>
+      <div class="overlay overlay--reserve"></div>
+      <div class="overlay overlay--nav"></div>
       <div class="form">
         <span class="close-icon"></span>
         <h2 class="form__title">宿泊予約</h2>
@@ -107,10 +113,12 @@
           </div>
           <div class="form-box">
             <label for="contact-body"
-              >ご希望プラン<span class="label-inner"
-                >（空いているプランのみ表示されます）</span
-              ></label
-            >
+              >ご希望プラン
+              <br class="sp-br" />
+              <span class="label-inner">
+                （空いているプランのみ表示されます）
+              </span>
+            </label>
             <select
               class="form-input selectbox"
               name="entry.1718052570"
