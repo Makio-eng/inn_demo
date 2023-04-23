@@ -1,7 +1,9 @@
+@use "sass:math";
+
 /* ブレークポイント*/
 $breakpoint: (
   sp: "screen and (max-width:767px)",
-  tab: "screen and (min-width:768px)",
+  tab: "screen and (min-width:768px) and (max-width:1279px)",
   pc: "screen and (min-width:1280px)",
 );
 @mixin mq($bp) {
@@ -10,11 +12,13 @@ $breakpoint: (
   }
 }
 @function rem($px) {
-  @return ($px / 16) * 1rem;
+  @return calc($px / 16) * 1rem;
 }
 @mixin border {
   border: 1px solid #707070;
 }
+
+// LineHeight余白除去
 @mixin lineHeight($line-height) {
   line-height: $line-height;
   &::before,
@@ -32,3 +36,32 @@ $breakpoint: (
   }
 }
 
+// clamp計算
+@function responsiveSizeClamp(
+  $minFontSize,
+  $maxFontSize,
+  $minViewport,
+  $maxViewport
+) {
+  $fontSizeRate: $maxFontSize - $minFontSize;
+  $viewportRate: $maxViewport - $minViewport;
+
+  $changingSize: math.div(
+    math.round(math.div($fontSizeRate, $viewportRate) * 10000),
+    100
+  );
+  $fixedSize: math.div(
+    math.round(
+      ($minFontSize - math.div($fontSizeRate, $viewportRate) * $minViewport) *
+        62.5
+    ),
+    1000
+  );
+  $minRemFontSize: math.div(math.round($minFontSize * 62.5), 1000);
+  $maxRemFontSize: math.div(math.round($maxFontSize * 62.5), 1000);
+  @return clamp(
+    #{$minRemFontSize}rem,
+    #{$fixedSize}rem + #{$changingSize}vw,
+    #{$maxRemFontSize}rem
+  );
+}

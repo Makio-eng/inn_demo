@@ -12,6 +12,7 @@
     <link rel="icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="./css/destyle.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
@@ -62,11 +63,7 @@
       <div class="form">
         <span class="close-icon"></span>
         <h2 class="form__title">宿泊予約</h2>
-        <form
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB61GLuboxKLu0PuF_aZj3KmujQ58TD-msUjcJSblzQTb_Vg/formResponse"
-          id="form"
-          class="form__inner"
-        >
+        <div id="form" class="form__inner">
           <div class="form-box">
             <label for="name">お名前</label>
             <input
@@ -129,21 +126,22 @@
               name="entry.1835067581"
             />
           </div>
-          <div class="btn-wrapper">
-            <button type="submit" class="btn--form" id="js-submit">
+          <a href="" class="btn-wrapper" id="js-submit">
+            <button type="submit" class="btn--form">
               送信する
             </button>
-          </div>
-        </form>
+          </a>
+        </div>
       </div>
       <!--//モーダル-->
     </header>
     <!--//header-->
 
     <!--main-->
-    <main>
+    <main class="main">
       <!--fv-->
       <div class="fv">
+        <div class="black-mask"></div>
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -172,29 +170,36 @@
 
       <!--consept-->
       <section class="consept">
-        <div class="consept__inner">
-          <div class="vertical-text consept__title-wrapper">
+        <div
+          class="consept__inner"
+          data-aos="fade"
+          data-aos-duration="1500"
+          data-aos-once="true"
+          data-aos-easing="ease-out"
+          data-aos-offset="50"
+        >
+          <div class="vertical-text--consept consept__title-wrapper">
             <h2 class="consept__title">温海温泉の</h2>
             <h2 class="consept__title">美しさに癒やされて</h2>
           </div>
-          <div class="vertical-text consept__body-wrapper">
+          <div class="vertical-text--consept consept__body-wrapper">
             <p class="consept__body">東北の奥座敷である温海温泉郷</p>
             <p class="consept__body">開湯は約1300年前とされ、役小角が</p>
             <p class="consept__body">発見したと伝えられます</p>
           </div>
-          <div class="vertical-text consept__body-wrapper">
+          <div class="vertical-text--consept consept__body-wrapper">
             <p class="consept__body">石井花壇は江戸より続く由緒ある旅館で</p>
             <p class="consept__body">
               クラシックな作りの中に大正ロマンあふれる
             </p>
             <p class="consept__body">内装を残しております</p>
           </div>
-          <div class="vertical-text consept__body-wrapper">
+          <div class="vertical-text--consept consept__body-wrapper">
             <p class="consept__body">圧倒的癒やしの空間で</p>
             <p class="consept__body">頑張る現代人に</p>
             <p class="consept__body">頑張らない圧倒的な非日常をご提供します</p>
           </div>
-          <p class="vertical-text consept__signature">石井花壇</p>
+          <p class="vertical-text--consept consept__signature">石井花壇</p>
         </div>
       </section>
       <!--//consept-->
@@ -202,27 +207,73 @@
       <!-- contents-->
       <section class="contents">
         <div class="contents__inner contents__inner--room">
-          <div class="contents__img-wrapper">
+          <div
+            class="overlay--contents"
+            data-aos="fade"
+            data-aos-duration="2500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          ></div>
+          <div
+            class="contents__img-wrapper"
+            data-aos="fade"
+            data-aos-duration="2500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <img src="./img/oheya-top.jpg" alt="" class="contents__img" />
           </div>
-          <div class="contents__body contents__body--room">
+          <div
+            class="contents__body contents__body--room"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <h3 class="contents__title contents__title--room">
               喧騒から離れた空間<br />
               心落ち着く至極のひととき
             </h3>
             <p class="contents__text contents__text--room">
-              まるで時が止まったかのような、圧倒的な静寂のなかで、<br />
-              ひたすらにゆったりと<span class="dots">…</span>。<br />
+              まるで時が止まったかのような、圧倒的な静寂のなかで、ひたすらにゆったりと<span
+                class="dots"
+                >…</span
+              >。<br />
               最高級の「何もしない時間」をお過ごしください。
             </p>
-            <a href="" class="contents__link">お部屋について</a>
+            <a href="./room.html" class="contents__link">お部屋について</a>
           </div>
         </div>
         <div class="contents__inner contents__inner--food">
-          <div class="contents__img-wrapper">
+          <div
+            class="overlay--contents"
+            data-aos="fade"
+            data-aos-duration="2500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          ></div>
+          <div
+            class="contents__img-wrapper"
+            data-aos="fade"
+            data-aos-duration="2500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <img src="./img/menu-top.jpg" alt="" class="contents__img" />
           </div>
-          <div class="contents__body contents__body--food">
+          <div
+            class="contents__body contents__body--food"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <h3 class="contents__title contents__title--food">
               出迎えるのは<br />
               極上の温海料理
@@ -233,26 +284,47 @@
               あなたの人生史に残る「極上の感動」を<br />
               お約束します。
             </p>
-            <a href="" class="contents__link contents__link--food"
+            <a href="./food.html" class="contents__link contents__link--food"
               >料理について</a
             >
           </div>
         </div>
         <div class="contents__inner contents__inner--spa">
-          <div class="contents__img-wrapper">
+          <div
+            class="overlay--contents"
+            data-aos="fade"
+            data-aos-duration="2500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          ></div>
+          <div
+            class="contents__img-wrapper"
+            data-aos="fade"
+            data-aos-duration="2500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <img src="./img/onsen-top.jpg" alt="" class="contents__img" />
           </div>
-          <div class="contents__body contents__body--spa">
+          <div
+            class="contents__body contents__body--spa"
+            data-aos="fade-left"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <h3 class="contents__title contents__title--spa">
               疲れ切った身体にやすらぎを<br />
               温海の源泉に癒やされて
             </h3>
             <p class="contents__text contents__text--spa">
               古くは弘法大師の病をも治療したと言われる温海の泉質。<br />
-              現代人の疲弊しきった身体を修復する最高級の湯治場として<br />
-              ご活用ください。
+              現代人の疲弊しきった身体を修復する最高級の湯治場としてご活用ください。
             </p>
-            <a href="" class="contents__link">温泉について</a>
+            <a href="./spa.html" class="contents__link">温泉について</a>
           </div>
         </div>
       </section>
@@ -261,50 +333,91 @@
       <!-- plan-->
       <section class="plan">
         <div class="plan__inner">
-          <div class="section-top">
+          <div
+            class="section-top"
+            data-aos="fade"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="100"
+          >
             <div class="section-top__img-wrapper">
               <img src="./img/black_logo.svg" alt="" class="section-top__img" />
             </div>
             <h2 class="section-top__title">おすすめご宿泊プラン</h2>
           </div>
           <ul class="plan__list">
-            <a href="#" class="plan__item">
+            <a
+              href="#"
+              class="plan__item"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-once="true"
+              data-aos-easing="ease-out"
+              data-aos-offset="50"
+              data-aos-delay="0"
+            >
               <div class="plan__img-wrapper">
                 <img src="./img/recommended01.jpg" alt="" class="plan__img" />
               </div>
-              <div class="plan__title">
-                朝食付きプラン、日本近海で取れた<br />
-                のどぐろを朝食として<span class="dots">…</span>
-              </div>
-              <div class="plan__text">
-                最高級と称されるのどぐろ、正式には「アカ
-                ムツ」と呼ばれる魚、味は独特の上品な味わ
-                いで、焼いても煮ても美味
+              <div class="plan__body">
+                <h3 class="plan__title">
+                  朝食付きプラン、日本近海で取れた<br
+                    class="pc-br--plan1"
+                  />のどぐろを朝食として<span class="dots">…</span>
+                </h3>
+                <p class="plan__text">
+                  最高級と称されるのどぐろ、正式には「アカムツ」と呼ばれる魚、味は独特の上品な味わいで、焼いても煮ても美味
+                </p>
               </div>
             </a>
-            <a href="#" class="plan__item">
+            <a
+              href="#"
+              class="plan__item plan__item--2"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-once="true"
+              data-aos-easing="ease-out"
+              data-aos-offset="50"
+              data-aos-delay="150"
+            >
               <div class="plan__img-wrapper">
                 <img src="./img/recommended02.jpg" alt="" class="plan__img" />
               </div>
-              <div class="plan__title">
-                【期間限定】温海蟹をたっぷりと<br />愉しむプラン。
-              </div>
-              <div class="plan__text">
-                温海で水揚げされた蟹は「温海蟹」
-                として知られ、嗜好品として愛されて
-                きました。この宿泊プランでは存分に
+              <div class="plan__body">
+                <h3 class="plan__title">
+                  【期間限定】温海蟹をたっぷりと<br
+                    class="pc-br--plan2"
+                  />愉しむプラン。
+                </h3>
+                <p class="plan__text">
+                  温海で水揚げされた蟹は「温海蟹」として知られ、嗜好品として愛されてきました。この宿泊プランでは存分に
+                </p>
               </div>
             </a>
-            <a href="#" class="plan__item">
+            <a
+              href="#"
+              class="plan__item"
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-once="true"
+              data-aos-easing="ease-out"
+              data-aos-offset="50"
+              data-aos-delay="300"
+            >
               <div class="plan__img-wrapper">
                 <img src="./img/recommended03.jpg" alt="" class="plan__img" />
               </div>
-              <h3 class="plan__title">
-                【平日限定】贅沢美味懐石プラン。<br />海辺の四季旬彩プラン。
-              </h3>
-              <p class="plan__text">
-                温海近海で取れた魚を鮮度そのままに舟盛りにしてご提供。生きた味をお楽しみください。
-              </p>
+              <div class="plan__body">
+                <h3 class="plan__title">
+                  【平日限定】贅沢美味懐石プラン。<br
+                    class="pc-br--plan3"
+                  />海辺の四季旬彩プラン。
+                </h3>
+                <p class="plan__text">
+                  温海近海で取れた魚を鮮度そのままに舟盛りにしてご提供。生きた味をお楽しみください。
+                </p>
+              </div>
             </a>
           </ul>
         </div>
@@ -314,14 +427,28 @@
       <!-- news-->
       <section class="news">
         <div class="news__inner">
-          <div class="section-top">
+          <div
+            class="section-top"
+            data-aos="fade"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <div class="section-top__img-wrapper">
               <img src="./img/black_logo.svg" alt="" class="section-top__img" />
             </div>
             <h2 class="section-top__title">お知らせ</h2>
           </div>
           <div class="tab">
-            <ul class="tab__menu">
+            <ul
+              class="tab__menu"
+              data-aos="fade"
+              data-aos-duration="2000"
+              data-aos-once="true"
+              data-aos-easing="ease-out"
+              data-aos-offset="100"
+            >
               <li class="tab__menu-item is-active" data-tab="01">営業情報</li>
               <li class="tab__menu-item" data-tab="02">その他</li>
             </ul>
@@ -332,7 +459,15 @@
                 data-panel="01"
               >
                 <ul class="info-list">
-                  <a href="#" class="info-item">
+                  <a
+                    href="#"
+                    class="info-item"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                    data-aos-easing="ease-out"
+                    data-aos-offset="100"
+                  >
                     <div class="info-item__img-wrapper">
                       <img
                         src="./img/news01.jpg"
@@ -348,7 +483,16 @@
                     </div>
                     <div class="dark-cover"></div>
                   </a>
-                  <a href="#" class="info-item">
+                  <a
+                    href="#"
+                    class="info-item"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                    data-aos-easing="ease-out"
+                    data-aos-offset="50"
+                    data-aos-delay="200"
+                  >
                     <div class="info-item__img-wrapper">
                       <img
                         src="./img/news02.jpg"
@@ -362,7 +506,15 @@
                     </div>
                     <div class="dark-cover"></div>
                   </a>
-                  <a href="#" class="info-item">
+                  <a
+                    href="#"
+                    class="info-item"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                    data-aos-easing="ease-out"
+                    data-aos-offset="50"
+                  >
                     <div class="info-item__img-wrapper">
                       <img
                         src="./img/news02.jpg"
@@ -378,7 +530,16 @@
                     </div>
                     <div class="dark-cover"></div>
                   </a>
-                  <a href="#" class="info-item">
+                  <a
+                    href="#"
+                    class="info-item"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                    data-aos-easing="ease-out"
+                    data-aos-offset="50"
+                    data-aos-delay="200"
+                  >
                     <div class="info-item__img-wrapper">
                       <img
                         src="./img/news01.jpg"
@@ -392,7 +553,15 @@
                     </div>
                     <div class="dark-cover"></div>
                   </a>
-                  <a href="#" class="info-item">
+                  <a
+                    href="#"
+                    class="info-item"
+                    data-aos="fade-right"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                    data-aos-easing="ease-out"
+                    data-aos-offset="50"
+                  >
                     <div class="info-item__img-wrapper">
                       <img
                         src="./img/news01.jpg"
@@ -408,7 +577,16 @@
                     </div>
                     <div class="dark-cover"></div>
                   </a>
-                  <a href="#" class="info-item">
+                  <a
+                    href="#"
+                    class="info-item"
+                    data-aos="fade-left"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                    data-aos-easing="ease-out"
+                    data-aos-offset="50"
+                    data-aos-delay="200"
+                  >
                     <div class="info-item__img-wrapper">
                       <img
                         src="./img/news02.jpg"
@@ -529,17 +707,39 @@
       <!--accsess-->
       <section class="access">
         <div class="access__inner">
-          <div class="section-top">
+          <div
+            class="section-top"
+            data-aos="fade"
+            data-aos-duration="2000"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="50"
+          >
             <div class="section-top__img-wrapper">
               <img src="./img/black_logo.svg" alt="" class="section-top__img" />
             </div>
             <h2 class="section-top__title">アクセス</h2>
           </div>
           <div class="access__info">
-            <div class="access__img-wrapper">
+            <div
+              class="access__img-wrapper"
+              data-aos="fade-right"
+              data-aos-duration="1500"
+              data-aos-once="true"
+              data-aos-easing="ease-out"
+              data-aos-offset="100"
+            >
               <img src="./img/access.jpg" alt="" class="access__img" />
             </div>
-            <div class="access__body">
+            <div
+              class="access__body"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-once="true"
+              data-aos-offset="100"
+              data-aos-delay="150"
+              data-aos-easing="ease-out"
+            >
               <p class="access__address-title">住所</p>
               <p class="access__address">
                 〒000-0000 <br />山形県鶴岡市xxxxxxxxxx
@@ -556,7 +756,14 @@
             </div>
           </div>
         </div>
-        <div class="access__map">
+        <div
+          class="access__map"
+          data-aos="fade"
+          data-aos-duration="2000"
+          data-aos-once="true"
+          data-aos-easing="ease-out"
+          data-aos-offset="100"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41594.413584597714!2d139.60485701258196!3d38.63681213979113!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f8c6dbd6c03ae15%3A0x10bc5da99bc816ef!2z44CSOTk5LTcyMDUg5bGx5b2i55yM6ba05bKh5biC5rip5rW3!5e0!3m2!1sja!2sjp!4v1679406891822!5m2!1sja!2sjp"
             width="100%"
@@ -573,13 +780,20 @@
     <!--//main-->
 
     <!--footer-->
-    <footer class="footer">
+    <footer
+      class="footer"
+      data-aos="fade"
+      data-aos-duration="1500"
+      data-aos-once="true"
+      data-aos-easing="ease-out"
+      data-aos-offset="50"
+    >
       <div class="footer__inner">
         <div class="footer__nav">
           <ul class="footer__nav-list vertical-text">
-            <a href="" class="footer__nav-item">お部屋</a>
-            <a href="" class="footer__nav-item">お料理</a>
-            <a href="" class="footer__nav-item">温泉</a>
+            <a href="./room.html" class="footer__nav-item">お部屋</a>
+            <a href="./food.html" class="footer__nav-item">お料理</a>
+            <a href="./spa.html" class="footer__nav-item">温泉</a>
           </ul>
         </div>
         <div class="footer__logo">
@@ -605,6 +819,7 @@
     </footer>
     <!--//footer-->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
     <script src="./js/script.js"></script>
   </body>

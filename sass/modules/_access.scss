@@ -5,12 +5,11 @@
 /* access
 ---------------------------------------*/
 .access {
-  padding: 60px 30px 110px;
+  padding: 60px 30px m.responsiveSizeClamp(60, 110, 320, 767);
   background-image: url(../img/paper-bg.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
-
   &__inner {
     max-width: 1180px;
     margin: 0 auto;
@@ -20,10 +19,24 @@
     gap: 83px;
     width: 100%;
     margin-top: 80px;
+    @include m.mq(tab) {
+      align-items: center;
+      gap: m.responsiveSizeClamp(40, 80, 768, 1279);
+    }
+    @include m.mq(sp) {
+      flex-direction: column;
+      align-items: center;
+      margin-top: m.responsiveSizeClamp(20, 80, 320, 767);
+      gap: m.responsiveSizeClamp(40, 83, 320, 767);
+    }
   }
   &__img-wrapper {
     width: 55.6%;
     margin-left: 2px;
+    @include m.mq(sp) {
+      margin: 0;
+      width: 100%;
+    }
   }
   &__img {
     aspect-ratio: 656/370;
@@ -33,10 +46,16 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
+    @include m.mq(sp) {
+      width: 100%;
+    }
   }
   &__address-title {
     font-weight: bold;
     margin-top: 20px;
+    @include m.mq(sp) {
+      margin-top: 0;
+    }
   }
   &__address {
     @include m.lineHeight(2);
@@ -53,11 +72,18 @@
   }
   &__pick {
     @include m.lineHeight(2);
+    @include m.mq(sp) {
+      @include m.lineHeight(1.5);
+    }
   }
   &__map {
     max-width: 792px;
     width: 67%;
     margin: 69px auto 0;
+    @include m.mq(sp) {
+      width: 100%;
+      margin-top: m.responsiveSizeClamp(40, 69, 320, 767);
+    }
   }
   & iframe {
     aspect-ratio: 792/592;

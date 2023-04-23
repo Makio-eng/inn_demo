@@ -14,11 +14,9 @@ body {
     "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "HGS明朝E",
     "MS P明朝", "MS PMincho", serif;
 }
-// h1,
-// h2,
-// h3,
-// h4 {
-// }
+.main {
+  overflow: hidden;
+}
 img {
   width: 100%;
   vertical-align: bottom;
@@ -30,6 +28,16 @@ img {
   writing-mode: vertical-rl;
   text-orientation: upright;
   -webkit-writing-mode: vertical-rl;
+  &--consept {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    -webkit-writing-mode: vertical-rl;
+    @media screen and (max-width: 599px) {
+      writing-mode: horizontal-tb;
+      text-orientation: upright;
+      -webkit-writing-mode: horizontal-tb;
+    }
+  }
 }
 .section-top {
   width: 100%;
@@ -41,7 +49,7 @@ img {
     margin: 0 auto;
   }
   &__title {
-    font-size: m.rem(36);
+    font-size: m.responsiveSizeClamp(28, 36, 320, 767);
     margin-top: 20px;
   }
 }
@@ -59,6 +67,29 @@ img {
   transition: background-color 0.3s ease;
   &:hover {
     background-color: #000;
+  }
+}
+.pc-br {
+  &--plan1 {
+    @media screen and (min-width: 1000px) and (max-width: 1215px) {
+      display: none;
+    }
+    @include m.mq(sp) {
+      display: none;
+    }
+  }
+  &--plan2 {
+    @media screen and (min-width: 1000px) and (max-width: 1164px) {
+      display: none;
+    }
+    @include m.mq(sp) {
+      display: none;
+    }
+  }
+  &--plan3 {
+    @include m.mq(sp) {
+      display: none;
+    }
   }
 }
 .sp-br {

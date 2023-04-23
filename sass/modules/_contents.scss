@@ -7,70 +7,154 @@
 .contents {
   padding: 106px 0 78px;
   width: 100%;
+  @media screen and (min-width: 768px) and (max-width: 1099px) {
+    padding: m.responsiveSizeClamp(40, 80, 768, 1099) 0 60px;
+  }
+  @include m.mq(sp) {
+    padding: 80px 0;
+  }
   &__inner {
     width: 100%;
     display: flex;
-    gap: 7%;
-    &:nth-child(1) {
-      margin-top: 106px;
+    gap: m.responsiveSizeClamp(40, 137, 1100, 1920);
+    @media screen and (min-width: 768px) and (max-width: 1099px) {
+      flex-direction: column;
+      align-items: center;
     }
-    &:nth-child(2) {
+    @include m.mq(sp) {
+      position: relative;
+      height: 80vh;
+    }
+    &--room {
+      margin-top: m.responsiveSizeClamp(70, 106, 1100, 1920);
+      @include m.mq(sp) {
+        margin-top: m.responsiveSizeClamp(0, 30, 320, 767);
+      }
+    }
+
+    &--food {
       flex-direction: row-reverse;
-      justify-content: end;
       margin-top: 122px;
-      gap: 9%;
+      gap: m.responsiveSizeClamp(40, 174, 1100, 1920);
+      @media screen and (min-width: 768px) and (max-width: 1099px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      @include m.mq(sp) {
+        margin-top: m.responsiveSizeClamp(70, 100, 320, 767);
+      }
     }
-    &:nth-child(3) {
+    &--spa {
       margin-top: 122px;
+      @include m.mq(sp) {
+        margin-top: m.responsiveSizeClamp(70, 100, 320, 767);
+      }
     }
   }
   &__img-wrapper {
     max-width: 1050px;
     width: 54.68%;
+    @media screen and (min-width: 768px) and (max-width: 1099px) {
+      width: 100%;
+      max-width: none;
+    }
+    @include m.mq(sp) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 20;
+    }
   }
   &__img {
     object-fit: cover;
     aspect-ratio: 1050/545;
+    @include m.mq(sp) {
+      aspect-ratio: auto;
+      width: 100%;
+      height: 100%;
+    }
   }
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 74px;
-
+    gap: m.responsiveSizeClamp(20, 74, 1100, 1920);
+    @media screen and (min-width: 768px) and (max-width: 1099px) {
+      gap: 40px;
+      align-items: center;
+    }
     &--room {
       padding-right: 20px;
+      @media screen and (min-width: 768px) and (max-width: 1099px) {
+        padding-right: 0;
+      }
     }
     &--food {
       padding-left: 20px;
+      @media screen and (min-width: 768px) and (max-width: 1099px) {
+        padding-left: 0;
+      }
+      @include m.mq(sp) {
+        align-items: flex-end;
+      }
     }
     &--spa {
       padding-right: 20px;
+      @media screen and (min-width: 768px) and (max-width: 1099px) {
+        padding-right: 0;
+      }
+    }
+    @include m.mq(sp) {
+      z-index: 30;
+      margin: auto;
+      color: #fff;
+      text-shadow: 1px 1px 3px #303030;
+      gap: m.responsiveSizeClamp(40, 60, 320, 767);
+      width: 80%;
+      padding: 0;
     }
   }
   &__title {
-    font-size: m.rem(36);
+    font-size: m.responsiveSizeClamp(26, 36, 1100, 1920);
     @include m.lineHeight(1.72);
     &--room {
-      margin-top: 32px;
+      margin-top: m.responsiveSizeClamp(20, 32, 1100, 1920);
     }
     &--food {
-      margin-top: 55px;
+      margin-top: m.responsiveSizeClamp(10, 55, 1100, 1920);
     }
     &--spa {
-      margin-top: 32px;
+      margin-top: m.responsiveSizeClamp(20, 32, 1100, 1920);
+    }
+    @include m.mq(sp) {
+      margin-top: 0;
+      font-size: m.responsiveSizeClamp(22, 26, 320, 767);
     }
   }
   &__text {
     @include m.lineHeight(2);
+    &--room {
+      max-width: 416px;
+    }
+    &--spa {
+      max-width: 431px;
+    }
+    @include m.mq(sp) {
+      @include m.lineHeight(1.5);
+      font-size: m.responsiveSizeClamp(14, 16, 320, 767);
+    }
   }
   &__link {
     display: inline-block;
-    padding: 19px 0;
+    padding: 18px 0;
     width: 200px;
     text-align: center;
     position: relative;
     overflow: hidden;
     @include m.border;
+    @include m.mq(sp) {
+      text-shadow: none;
+      border-color: #fff;
+    }
     &::before {
       content: "";
       display: inline-block;
@@ -80,19 +164,28 @@
       left: 0;
       top: 0;
       transform: translateX(-100%);
-      background-color: #303030;
+      background-color: #000;
       z-index: -1;
       transition: 0.3s;
+      @include m.mq(sp) {
+        background-color: #fff;
+      }
     }
     &:hover {
       color: #fff;
       transition: 0.3s;
+      @include m.mq(sp) {
+        color: #000;
+      }
       &::before {
         transform: translateX(0);
       }
     }
     &--food {
       margin-top: -32px;
+      @media screen and (max-width: 1400px) {
+        margin-top: 0;
+      }
     }
   }
 }

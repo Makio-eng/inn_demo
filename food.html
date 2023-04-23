@@ -16,6 +16,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
@@ -82,11 +83,7 @@
       <div class="form">
         <span class="close-icon"></span>
         <h2 class="form__title">宿泊予約</h2>
-        <form
-          action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfB61GLuboxKLu0PuF_aZj3KmujQ58TD-msUjcJSblzQTb_Vg/formResponse"
-          id="form"
-          class="form__inner"
-        >
+        <div id="form" class="form__inner">
           <div class="form-box">
             <label for="name">お名前</label>
             <input
@@ -149,12 +146,10 @@
               name="entry.1835067581"
             />
           </div>
-          <div class="btn-wrapper">
-            <button type="submit" class="btn--form" id="js-submit">
-              送信する
-            </button>
-          </div>
-        </form>
+          <a href="" class="btn-wrapper" id="js-submit">
+            <button type="submit" class="btn--form">送信する</button>
+          </a>
+        </div>
       </div>
       <!--//モーダル-->
     </header>
@@ -163,7 +158,14 @@
     <!--main-->
     <main class="under-main">
       <!--fv-->
-      <div class="under-fv under-fv--food">
+      <div
+        class="under-fv under-fv--food"
+        data-aos="fade"
+        data-aos-duration="1500"
+        data-aos-once="true"
+        data-aos-easing="ease-out"
+        data-aos-offset="100"
+      >
         <h2 class="under-fv__title">お料理</h2>
       </div>
       <!--//fv-->
@@ -172,7 +174,14 @@
       <div class="under-section-wrapper">
         <div class="under-section-inner">
           <!--パンくずリスト-->
-          <ul class="breadcrumb">
+          <ul
+            class="breadcrumb"
+            data-aos="fade"
+            data-aos-duration="1500"
+            data-aos-once="true"
+            data-aos-easing="ease-out"
+            data-aos-offset="100"
+          >
             <li class="breadcrumb__item">
               <a class="breadcrumb__link" href="./index.html">トップ</a>
             </li>
@@ -184,17 +193,44 @@
 
           <!--sub-contents-->
           <section class="sub-contents">
-            <p class="sub-contents__lead">
+            <p
+              class="sub-contents__lead"
+              data-aos="fade"
+              data-aos-duration="1500"
+              data-aos-once="true"
+              data-aos-easing="ease-out"
+              data-aos-offset="100"
+            >
               地元温海の市場で仕入れた食材のみを使った食材をふんだんに使い、<br />
               大将の技が光る「温海料理」<br />
               四季ごと、日ごとに変化する味わいを、どうぞご堪能ください。
             </p>
             <div class="sub-contents__inner">
-              <div class="sub-contents__img-wrapper">
+              <div
+                class="overlay--contents"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
+              ></div>
+              <div
+                class="sub-contents__img-wrapper"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
+              >
                 <img src="./img/menu01.jpg" alt="" class="sub-contents__img" />
               </div>
               <div
                 class="sub-contents__body sub-contents__body--food sub-contents__body--normal"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
               >
                 <h3 class="sub-contents__title">
                   地元食材にこだわった会席料理
@@ -207,11 +243,31 @@
               </div>
             </div>
             <div class="sub-contents__inner">
-              <div class="sub-contents__img-wrapper">
+              <div
+                class="overlay--contents"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
+              ></div>
+              <div
+                class="sub-contents__img-wrapper"
+                data-aos="fade-left"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
+              >
                 <img src="./img/menu02.jpg" alt="" class="sub-contents__img" />
               </div>
               <div
                 class="sub-contents__body sub-contents__body--food sub-contents__body--reverse"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
               >
                 <h3 class="sub-contents__title">温海の漁港で目利きの品を</h3>
                 <p class="sub-contents__text">
@@ -222,11 +278,31 @@
               </div>
             </div>
             <div class="sub-contents__inner">
-              <div class="sub-contents__img-wrapper">
+              <div
+                class="overlay--contents"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
+              ></div>
+              <div
+                class="sub-contents__img-wrapper"
+                data-aos="fade-right"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
+              >
                 <img src="./img/menu03.jpg" alt="" class="sub-contents__img" />
               </div>
               <div
                 class="sub-contents__body sub-contents__body--food sub-contents__body--normal"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+                data-aos-once="true"
+                data-aos-easing="ease-out"
+                data-aos-offset="50"
               >
                 <h3 class="sub-contents__title">食材が一流、職人も一流</h3>
                 <p class="sub-contents__text">
@@ -246,13 +322,19 @@
     <!--//main-->
 
     <!--footer-->
-    <footer class="footer">
+    <footer
+      class="footer"
+      data-aos="fade"
+      data-aos-duration="1500"
+      data-aos-once="true"
+      data-aos-offset="50"
+    >
       <div class="footer__inner">
         <div class="footer__nav">
           <ul class="footer__nav-list vertical-text">
-            <a href="" class="footer__nav-item">お部屋</a>
-            <a href="" class="footer__nav-item">お料理</a>
-            <a href="" class="footer__nav-item">温泉</a>
+            <a href="./room.html" class="footer__nav-item">お部屋</a>
+            <a href="./food.html" class="footer__nav-item">お料理</a>
+            <a href="./spa.html" class="footer__nav-item">温泉</a>
           </ul>
         </div>
         <div class="footer__logo">
@@ -278,6 +360,7 @@
     </footer>
     <!--//footer-->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
     <script src="./js/script.js"></script>
   </body>

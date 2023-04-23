@@ -1,5 +1,14 @@
 'use strict';
 
+// スクロールアニメーション起動
+AOS.init();
+
+// フォーム・送信ボタン
+const submitBtn = document.getElementById('js-submit');
+submitBtn.addEventListener('click', function () {
+  window.location.reload();
+});
+
 /* ヘッダー
 ---------------------------------------------------*/
 const header = document.querySelector('header');
@@ -69,30 +78,47 @@ const reserveBtn = document.querySelector('.reserve-btn');
 const closeBtn = document.querySelector('.close-icon');
 const formModal = document.querySelector('.form');
 const ovarLayReserve = document.querySelector('.overlay--reserve');
+const reserveRemoves = [ovarLayReserve, closeBtn];
 
-let reserveTriggers = [reserveBtn, ovarLayReserve, closeBtn];
-reserveTriggers.forEach((reserveTrigger) => {
-  reserveTrigger.addEventListener('click', toggleReserveModal);
+reserveBtn.addEventListener('click', openReserveModal);
+reserveRemoves.forEach((reserveRemove) => {
+  reserveRemove.addEventListener('click', removeReserveModal);
 });
-function toggleReserveModal() {
-  ovarLayReserve.classList.toggle('modal-open');
-  body.classList.toggle('no-scroll');
-  formModal.classList.toggle('modal-open');
+
+function openReserveModal() {
+  ovarLayReserve.classList.add('modal-open');
+  body.classList.add('no-scroll');
+  formModal.classList.add('modal-open');
+}
+function removeReserveModal() {
+  ovarLayReserve.classList.remove('modal-open');
+  body.classList.remove('no-scroll');
+  formModal.classList.remove('modal-open');
 }
 
 // モーダル切り替え関連の要素にイベント設定(ナビゲーション)
 const nav = document.querySelector('.nav');
+const navLinks = document.querySelectorAll('.nav__link');
 const burgerBtn = document.querySelector('.burger-btn');
 const ovarLayNav = document.querySelector('.overlay--nav');
-let navTriggers = [burgerBtn, ovarLayNav];
-navTriggers.forEach((navTrigger) => {
-  navTrigger.addEventListener('click', toggleNavModal);
+
+burgerBtn.addEventListener('click', toggleNavModal);
+ovarLayNav.addEventListener('click', removeNavModal);
+
+navLinks.forEach((navlink) => {
+  navlink.addEventListener('click', removeNavModal);
 });
 function toggleNavModal() {
   ovarLayNav.classList.toggle('modal-open');
   body.classList.toggle('no-scroll');
   nav.classList.toggle('menu-open');
   burgerBtn.classList.toggle('btn-open');
+}
+function removeNavModal() {
+  ovarLayNav.classList.remove('modal-open');
+  body.classList.remove('no-scroll');
+  nav.classList.remove('menu-open');
+  burgerBtn.classList.remove('btn-open');
 }
 
 /* swiper
@@ -106,6 +132,7 @@ const swiper = new Swiper('.swiper', {
     disableOnInteraction: false, // ユーザーが操作しても自動再生を継続
   },
   speed: 2000, // 2秒かけてフェード
+  allowTouchMove: false,
 });
 
 /* タブ

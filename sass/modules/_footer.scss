@@ -18,10 +18,11 @@
   }
   &__nav-list {
     margin: 0 auto;
+    padding-right: 5px;
     display: flex;
     flex-direction: column;
     gap: 32px;
-    font-size: m.rem(18);
+    font-size: m.responsiveSizeClamp(16,18,320,767);
   }
   &__nav-item {
     letter-spacing: 0.8em;
@@ -36,6 +37,9 @@
     width: 100%;
     margin: 82px auto 0;
     text-align: center;
+    @include m.mq(sp) {
+      margin-top: m.responsiveSizeClamp(40, 82, 320, 767);
+    }
   }
   &__img-wrapper {
     width: 40px;
@@ -56,6 +60,13 @@
     display: flex;
     gap: 22px;
     justify-content: center;
+    @include m.mq(sp) {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: m.responsiveSizeClamp(30,68,320,767);
+      margin-left: 0;
+    }
   }
   &__address {
     letter-spacing: 0.162em;
@@ -67,6 +78,12 @@
     gap: 24px;
     justify-content: center;
     margin-left: 4px;
+    @include m.mq(sp) {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-left: 0;
+    }
   }
   &__copy-wrapper {
     width: 100%;

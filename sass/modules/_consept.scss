@@ -9,34 +9,54 @@
   background-image: url(../img/paper-bg.jpg);
   background-size: cover;
   padding: 149px 0 119px;
+  @media screen and (max-width: 599px) {
+    padding: 40px 0;
+  }
   &__inner {
     display: flex;
-    gap: m.rem(115);
+    gap: m.responsiveSizeClamp(50, 115, 600, 1000);
     justify-content: center;
     flex-direction: row-reverse;
     width: 90%;
     margin: 0 auto;
+    @media screen and (max-width: 599px) {
+      flex-direction: column;
+      gap: m.responsiveSizeClamp(30, 50, 320, 599);
+    }
   }
   &__title-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: m.responsiveSizeClamp(10, 28, 320, 1000);
   }
   &__title {
-    font-size: m.rem(28);
+    font-size: m.responsiveSizeClamp(22, 28, 320, 1000);
     letter-spacing: 0.5em;
-
     &:first-child {
       margin-top: -85px;
+      @media screen and (max-width: 599px) {
+        margin-top: 0;
+      }
+    }
+    @include m.mq(sp) {
+      letter-spacing: 0.2em;
     }
   }
   &__body-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: m.responsiveSizeClamp(6, 20, 320, 1000);
+    @media screen and (max-width: 599px) {
+      flex-direction: column;
+      margin-left: m.responsiveSizeClamp(16, 30, 320, 599);
+    }
   }
   &__body {
     letter-spacing: 0.38em;
+    @include m.mq(sp) {
+      letter-spacing: 0.1em;
+      font-size: m.responsiveSizeClamp(14, 16, 320, 599);
+    }
   }
   &__signature {
     font-size: m.rem(22);

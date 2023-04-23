@@ -5,17 +5,39 @@
 /* plan
 ---------------------------------------*/
 .plan {
-  padding: 60px 30px 144px;
+  padding: 58px 30px m.responsiveSizeClamp(70, 144, 320, 767);
   background-image: url(../img/plan-bg.jpg);
   background-repeat: no-repeat;
+  @media screen and (min-width: 320px) and (max-width: 999px) {
+    background-position: center;
+    background-size: cover;
+  }
   &__inner {
     max-width: 1181px;
     margin: 0 auto;
+    @media screen and (min-width: 320px) and (max-width: 999px) {
+      width: 100%;
+    }
   }
   &__list {
     display: flex;
     gap: 94px;
     margin-top: 62px;
+    justify-content: center;
+    @media screen and (min-width: 768px) and (max-width: 999px) {
+      flex-direction: column;
+      background-position: center;
+      background-size: cover;
+    }
+    @include m.mq(sp) {
+      display: block;
+      margin-top: 0;
+    }
+  }
+  &__img-wrapper {
+    @media screen and (min-width: 768px) and (max-width: 999px) {
+      width: 45%;
+    }
   }
   &__img {
     aspect-ratio: 331/209;
@@ -23,19 +45,59 @@
   &__item {
     width: calc(33.33% - 63px);
     transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @media screen and (min-width: 768px) and (max-width: 999px) {
+      flex-direction: row;
+      width: 100%;
+    }
+    &--2 {
+      @media screen and (min-width: 768px) and (max-width: 999px) {
+        flex-direction: row-reverse;
+      }
+    }
+    @include m.mq(sp) {
+      margin: 0 auto;
+      width: 100%;
+      gap: m.responsiveSizeClamp(30, 50, 320, 767);
+      margin-top: m.responsiveSizeClamp(60, 120, 320, 767);
+      align-items: center;
+    }
     &:hover {
       scale: 1.01;
       transition: 0.3s;
       filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.6));
     }
   }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 36px;
+    @media screen and (min-width: 768px) and (max-width: 999px) {
+      justify-content: center;
+      gap: m.responsiveSizeClamp(30, 50, 768, 999);
+      flex: 1;
+    }
+    @include m.mq(sp) {
+      gap: m.responsiveSizeClamp(20, 30, 320, 767);
+      align-items: center;
+      width: 90%;
+    }
+  }
   &__title {
     font-size: m.rem(20);
-    margin-top: 34px;
     @include m.lineHeight(1.6);
   }
   &__text {
-    margin-top: 28px;
     @include m.lineHeight(2);
+    margin-top: auto;
+    @media screen and (min-width: 768px) and (max-width: 999px) {
+      margin-top: 0;
+    }
+    @include m.mq(sp) {
+      @include m.lineHeight(1.5);
+    }
   }
 }
